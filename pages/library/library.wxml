@@ -1,0 +1,44 @@
+<!-- <view>
+  <navigator url='../upload/upload'>
+     <button class="page__desc upload">共享书籍</button> 
+  </navigator>
+</view>-->
+<view style="height: {{windowHeight}}px; width: {{windowWidth}}px;" class="back_img"></view>
+<image class="logo" mode="aspectFit" src="../../images/book.jpg"></image>
+<form bindsubmit="formSubmit">
+  <view class="m-search">
+    <icon class="icon-search" type="search" size="18" />
+    <input class="search-inp" bindinput="typeIng" placeholder-class="p_style" placeholder="书名" name="book" focus="{{focus}}" value="{{inputValue}}" bindconfirm="enterSubmit" />
+    <block wx:if="{{cancel}}">
+      <icon class="icon-cancel" bindtap="clearInput" type="clear" size="18" color="#eee" />
+    </block>
+    <button class="search-btn" formType="submit">搜索</button>
+  </view>
+</form>
+<!-- 图书展示 -->
+<scroll-view scroll-y="true" style="height:{{scrollHeight}}px" scroll-top="{{scrollTop}}" bindscrolltolower="{{dropLoadFunc}}" lower-threshold="30">
+  <view class="list-content">
+    <block wx:if="{{status=='success'}}">
+      <navigator wx:for="{{booksList}}" wx:key="*this" url="../book/book?bookid={{item._id}}">
+        <view class="bookitem">
+          <view class="name">{{item.bookname}}</view>
+          <view class="author">作者:{{item.writer}}</view>
+          <view class="other-infos">
+            <view class="info-item overflow">简介:{{item.description}}</view>
+            <view class="info-item overflow">浏览:({{item.pv}})</view>
+            <!-- <view class="info-item"><image src='{{item.cover}}'></image>封面:</view> -->
+          </view>
+        </view>
+      </navigator>
+      <!-- <view wx:if="{{ pageCurrent< pagesTotal}}" class="load-tip">
+        <image animation="{{animationData}}" class="icon-load" mode="aspectFit" src="../../images/icon/icon-load.gif"></image>
+        加载中...
+      </view>
+      <view wx:else class="load-tip">没有更多了</view> -->
+    </block>
+    <view wx:else class="search-fail">
+      <image mode="aspectFit" class="fail-img" src="../../images/search-fail.jpg"></image>
+      <text class="fail-txt">难过，没有找到您要的书...</text>
+    </view>
+  </view>
+</scroll-view>

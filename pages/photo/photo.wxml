@@ -1,0 +1,21 @@
+<!--pages/photo/photo.wxml-->
+<navigator url='../upload/upload'>
+  <button size="mini" class="page__desc" value='aa' >上传照片,记录美好时光</button>
+</navigator>
+<!--list.wxml-->
+<view style="height: {{windowHeight}}px; width: {{windowWidth}}px;" class="back_img"></view>
+<scroll-view scroll-y="true">
+  <view wx:for="{{photoesList}}" wx:key="*this" class="item-container" bindtap="showDetail">
+    <image bindtap='show' data-url="{{item.url}}" mode="aspectFill" src="{{item.url}}" class="cover"></image>
+    <view class="desc">
+      <view class="left">
+        <view style="font-size:32rpx;margin:10rpx 0;">{{item.address}}</view>
+        <view style="font-size:24rpx;color:darkgray">{{item.created_at}}</view>
+      </view>
+      <view class="right">
+        <image mode="aspectFit" src="{{item.author.avatar}}"></image>
+        <text style="font-size:24rpx;margin-top:10rpx;color:darkgray">{{item.author.name}}</text>
+      </view>
+    </view>
+  </view>
+</scroll-view>

@@ -1,0 +1,45 @@
+<!--pages/article/article.wxml-->
+<view class="page">
+    <view class="page__hd">
+                    <view style="position:absolute;top:{{windowHeight * 0.06}}px;">
+    <image src="{{blog.post.author.avatar}}" style="width: {{windowWidth * 0.2}}px;height:{{windowWidth * 0.2}}px; margin-left:{{windowWidth * 0.5 - 80}}px;border-radius:{{windowWidth * 0.2}}px;"></image>
+</view>
+    </view>
+    <view style="height: {{windowHeight}}px; width: {{windowWidth}}px;" class="back_img"></view>
+    <view class="page__desc title">{{blog.post.author.name}}的文章</view>
+    <view class="page__bd">
+        <view class="weui-article">
+            <view class="weui-article__h1">{{blog.post.title}}</view>
+            <view class="weui-article__section">
+                <view class="weui-article__section">
+                    <view class="weui-article__p">
+                        {{blog.post.content}}
+                    </view>
+                    <view class="weui-article__p">
+                      <!-- 时间 -->
+                      <text>{{blog.post.created_at}}</text>
+                      <!-- 浏览量 -->
+                      <text>  浏览({{blog.post.pv}})</text>
+                      <!-- 留言 -->
+                      <text>  留言({{blog.post.commentsCount}})</text>
+                    </view>
+                  <text class="msg-info" wx:if="{{blog.post.commentsCount==0}}">暂无留言...^_^</text>
+                  <!--留言列表-->
+                  <view class="msg-list">
+                    <view class="item" wx:for="{{blog.comments}}" wx:key="{{index}}">
+                      <text class="text1">{{item.author.name}}:{{item.content}}  {{item.created_at}}</text>
+                      <!-- <icon data-index="{{index}}" class="close-btn" type="cancel" bindtap="delMsg" /> -->
+                    </view>
+                  </view>
+                  <!-- 留言页 -->
+                  <form bindsubmit="addcomment" data-postid="{{blog.post._id}}">
+                    <view class="leave-box">
+                      <textarea class="comment" placeholder="请留言..." name="comment" />
+                      <button type="primary"  formType="submit" size="mini" >留言</button>
+                    </view>
+                  </form>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

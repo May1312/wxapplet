@@ -1,0 +1,2 @@
+/* pages/article/public.wxss */
+@import "../index/index.wxss";

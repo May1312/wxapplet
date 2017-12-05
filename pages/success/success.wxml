@@ -1,0 +1,24 @@
+<view class="page">
+    <view class="weui-msg">
+        <view class="weui-msg__icon-area">
+            <icon type="success" size="93"></icon>
+        </view>
+        <view class="weui-msg__text-area">
+            <view class="weui-msg__title">发布成功</view>
+            <view class="weui-msg__desc">( ^_^ )( ^_^ )( ^_^ )</view>
+        </view>
+        <view class="weui-msg__opr-area">
+            <view class="weui-btn-area">
+                <button class="weui-btn" type="primary" bindtap="toindex">返回首页</button>
+            </view>
+        </view>
+        <view class="weui-msg__extra-area">
+            <view class="weui-footer">
+                <view class="weui-footer__links">
+                    <navigator url="" class="weui-footer__link">见微知行,记录美好时光</navigator>
+                </view>
+                <view class="weui-footer__text">Copyright © 2008-2017 hellohang.com</view>
+            </view>
+        </view>
+    </view>
+</view>

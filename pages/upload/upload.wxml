@@ -1,0 +1,22 @@
+<view class="page">
+    <view class="page__hd">
+    </view>
+    <view class="page__bd">
+      <view class="container">
+        <view class="usermotto">
+          <view class="weui-uploader">
+                        <view class="weui-uploader__bd">
+                            <view class="weui-uploader__files" id="uploaderFiles">
+                                <block wx:for="{{files}}" wx:key="*this">
+                                    <view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
+                                        <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                                    </view>
+                                </block>
+                            </view>
+                        </view>
+          </view>
+          <button type="primary" bindtap="uploadToCos" class="user-button"> 点击选择 </button>
+        </view>
+      </view>
+    </view>
+</view>

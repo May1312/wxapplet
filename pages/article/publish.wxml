@@ -1,0 +1,32 @@
+<!--pages/article/public.wxml-->
+<view class="page">
+    <view class="page__hd">
+        <view style="position:absolute;top:{{windowHeight * 0.06}}px;">
+            <image src="{{userInfo.avatarUrl}}" style="width: {{windowWidth * 0.2}}px;height:{{windowWidth * 0.2}}px; margin-left:{{windowWidth * 0.5 - 80}}px;border-radius:{{windowWidth * 0.2}}px;"></image>
+        </view>
+    </view>
+    <view style="height: {{windowHeight}}px; width: {{windowWidth}}px;" class="back_img"></view>
+    <view class="page__bd">
+      <form bindsubmit="publish">
+      <view class="">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label"></view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" placeholder="请输入标题" type="text" focus="true" name="title" value="{{title}}"/>
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_textarea">
+          <view class="weui-cell__bd">
+              <textarea class="weui-textarea" maxlength="-1" placeholder="正文( ^_^ )" type="text" focus="true" name="content" value="{{content}}"/>
+          </view>
+        </view>
+        <view class="weui-btn-area">
+          <button class="weui-btn" type="primary" formType="submit" size='mini'>发布</button> 
+        </view>
+      </view>
+      <view class="weui-cells__tips"></view>
+  </form>
+    </view>
+</view>

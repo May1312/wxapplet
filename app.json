@@ -1,0 +1,52 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/photo/photo",        
+    
+    "pages/my/my",
+    
+    
+    "pages/article/publish",
+    
+    "pages/logs/logs",
+    "pages/article/article",
+    "pages/success/success",
+    "pages/book/book",
+    "pages/upload/upload",
+    "pages/read/read",
+    "pages/download/download",
+    "pages/library/library"
+    
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#47a86c",
+    "backgroundTextStyle": "light",
+    "navigationBarTitleText": "见微知行+",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#11cd6e",
+    "borderStyle": "black",
+    "list": [
+      {
+        "selectedIconPath": "images/index.png",
+        "iconPath": "images/index.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "images/library.png",
+        "iconPath": "images/library.png",
+        "pagePath": "pages/library/library",
+        "text": "图书馆"
+      },
+      {
+        "selectedIconPath": "images/user.png",
+        "iconPath": "images/user.png",
+        "pagePath": "pages/my/my",
+        "text": "我的"
+      }
+    ]
+  }
+}

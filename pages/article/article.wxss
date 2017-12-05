@@ -1,0 +1,11 @@
+/* pages/article/article.wxss */
+@import '../index/index.wxss';
+
+.title{
+  padding:20px 15px;
+}
+.comment{
+  border-color:#BBD2D7;
+  border-style:outset;
+  width:100%
+}

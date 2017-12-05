@@ -1,0 +1,51 @@
+<view class="header">
+  <image mode="widthFix" class="book-img" src="{{book.cover}}"></image>
+  <view class="book-infos">
+    <view class="name">{{book.bookname}}</view>
+    <text class="item">作者：{{book.writer}}</text>
+  </view>
+</view>
+<view class="tab">
+  <block>
+    <view class=" item" data-current="0" bindtap="changeSwiperPage">详情</view>
+    <!-- <view class="item cur" data-current="1" bindtap="changeSwiperPage">评论</view> -->
+  </block>
+</view>
+<swiper class="swiper-content" style="height:{{swiperHeight}}px;" current="{{current}}" bindchange="swiperChange">
+  <swiper-item>
+    <scroll-view class="mes" scroll-y="true" style="height:{{swiperHeight}}px" lower-threshold="0">
+      <view class="inner">
+        <view class="label">简介:</view>
+        <view class="intro">
+          <text>{{book.description}}</text>
+        </view>
+      </view>
+    </scroll-view>
+  </swiper-item>
+  <swiper-item>
+    <view class="doing">
+      Comming Soon...
+    </view>
+  </swiper-item>
+</swiper>
+<view class="weui-flex">
+  <view class="weui-flex__item">
+    <view class="placeholder" bindtap="read" data-url="{{book.locate}}">阅读</view>
+  </view>
+  <view class="weui-flex__item">
+    <view class="placeholder">
+      <navigator url='../download/download?url={{book.locate}}'>下载</navigator>
+    </view>
+  </view>
+  <view class="weui-flex__item">
+    <view class="placeholder">
+      <view data-url="{{book.locate}}" bindtap='copyfile'>文件链接</view>
+    </view>
+  </view>
+</view>
+<view class="weui-footer">
+  <view class="weui-footer__links">
+    <navigator url="" class="weui-footer__link">见微知行,记录美好时光</navigator>
+  </view>
+  <view class="weui-footer__text">点击文件链接，复制文件下载路径，在本地浏览器中打开可下载至本地</view>
+</view>
